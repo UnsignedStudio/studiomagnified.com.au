@@ -6,43 +6,49 @@ html
     meta(name='description', content='description of your site')
     meta(name='author', content= "author of the site")
     meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="shortcut icon", href="img/favicon.ico")
     title Studio Magnified
     != css()
 
   body
-    #container
-      .content
-        h1#title Studio Magnified
-        a#title-link(href='#', onclick='toggleSite()') Studio Magnified
-        #bar
-        #info
-          p We are a Melbourne based creative studio. We specialise in communicating the built environment through film, print, interactive and digital mediums in imaginative ways.
-          p Our multidisciplinary team includes architectural designers, graphic designers, illustrators, 3D artists, animators, photographers, video editors, copywriters, coders and developers.
-          p
-            | Click 
-            a(href='/') here 
-            | to download our capabilities and case studies.
-          p
-            | If you are interested in working with us please call +61 3 8560 1601
-            br
-            | or email 
-            a(href='mailto:melbourne@studiomagnifed.com.au') melbourne@studiomagnifed.com.au
-          p
-            | 11/46-50 Regent Street
-            br
-            | Richmond, VIC 3121
+    #title
+      img(src='img/logo.png', width='100%')
+    .block
+      #container
+        .content
+          #bar
+          #info
+            p We are a Melbourne based creative studio. We specialise in communicating the built environment through film, print, interactive and digital mediums in imaginative ways.
+            p Our multidisciplinary team includes architectural designers, graphic designers, illustrators, 3D artists, animators, photographers, video editors, copywriters, coders and developers.
+            p
+              | Click 
+              a(href='/') here
+              |  to download our capabilities and case studies.
+            p
+              | If you are interested in working with us please call +61 3 8560 1601
+              br
+              | or email 
+              a(href='mailto:melbourne@studiomagnifed.com.au') melbourne@studiomagnifed.com.au
+            p
+              | 11/46-50 Regent Street
+              br
+              | Richmond, VIC 3121
+    
+      p#enter
+        a(href='js:void;', onclick='scrollDown()'): img(src='img/arrow.png', width='50px')
 
-    #video-container.hide
+  #video-block.block
+    #video-container
       video#video(loop='loop', controls='controls')
         source(src='https://content.squintopera.com.au/reel/squintAU_2017_reel_webres_02.mp4', type='video/mp4')
 
-    #enter
-      a(href='#', onclick='toggleSite()'): img(src='img/arrow.png', width='50px')
-
-    #footer.hide
+    #footer
       .social
         a(href='#'): img(src='img/linkedin.png', width='25px')
         a(href='#'): img(src='img/facebook.png', width='25px')
         a(href='#'): img(src='img/instagram.png', width='25px')
   
+    script(src='js/plugins/TweenMax.min.js')
+    script(src='js/ScrollMagic.min.js')
+    script(src='js/plugins/animation.gsap.min.js')
     script(src='js/main.js')

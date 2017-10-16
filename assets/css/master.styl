@@ -6,10 +6,16 @@
   font-family: CircularStd-Medium
   src: url(../fonts/CircularStd-Medium.otf)
 
+html, body
+  height: 100%
+
 body
   background-color: #547088
   margin: 0
-  overflow: hidden
+
+.block
+  height: 100vh
+  position: relative
 
 #container
   position: absolute
@@ -17,23 +23,20 @@ body
   right: 0
   top: 50%
   transform: translateY(-50%)
-
-@keyframes container
-  from 
-    top: 50%
-    transform: translateY(-50%)
-  to
-    top: 5%
-    transform: translateY(0%)
-
-#container.animate
-  animation-name: container
-  animation-duration: 1s
-  animation-fill-mode: forwards 
+  padding: 0 15px
 
 .content
   margin: auto
   max-width: 660px;
+
+#title
+  max-width: 600px
+  display: block
+  margin: auto
+  position: absolute
+  left: 0
+  right:0
+  top: 50%
 
 h1,
 a#title-link
@@ -48,28 +51,14 @@ a#title-link
   display: block
   height: 4px
   margin: auto
-  margin-bottom: 30px
-  width: 400px
+  margin-bottom: 35px
+  width: 100%
+  max-width: 600px
 
-
-@keyframes title
-  from 
-    font-size: 40pt
-  to
-    font-size: 20pt
-
-#title.animate
-  animation-name: title
-  animation-duration: 1s
-  animation-fill-mode: forwards
+a, p
+  color: white
 
 p
-  color: white
-
-a
-  color: white
-
-h1, p, a#title-link
   font-family: 'CircularStd-Book', sans-serif
   text-align: center
 
@@ -79,20 +68,11 @@ h1, p, a#title-link
   right: 0
   bottom: 80px
 
-#enter img 
-  display: block
-  margin: auto
+#enter img
+  transition: transform 0.2s
 
-@keyframes enter
-  from 
-    bottom: 80px
-  to
-    bottom: -50px
-
-#enter.animate
-  animation-name: enter
-  animation-duration: 1s
-  animation-fill-mode: forwards
+#enter img:hover
+  transform: scale(1.4)
 
 #bar.hide,
 .hide
@@ -111,35 +91,11 @@ video
   width: 100%
   max-width: 900px
 
-@keyframes video
-  from 
-    opacity: 0
-  to
-    opacity: 100
-
-#video.animate
-  animation-name: video
-  animation-duration: 1s
-  animation-delay: 0.5s
-  animation-fill-mode: both
-
 #footer
   position: absolute
   left: 0
   right: 0
-  bottom: -40px
-
-@keyframes footer
-  from
-    bottom: -40px
-  to
-    bottom: 40px
-
-#footer.animate
-  animation-name: footer
-  animation-duration: 1s
-  animation-delay: 0.5s
-  animation-fill-mode: forwards
+  bottom: 40px
 
 .social
   margin: auto
@@ -161,3 +117,11 @@ a#title-link:hover
 
 #title-link.show
   display: block
+
+@media screen and (max-width: 618px) {
+  #title {
+    margin: 0
+    left: 15px;
+    width: calc(100% - 30px)
+  }
+}

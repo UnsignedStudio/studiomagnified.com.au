@@ -1,30 +1,26 @@
-var animated = false;
+var ctrl = new ScrollMagic.Controller();
 
-function toggleSite() {
-    if (animated) {
-        document.getElementById('bar').className = '';
-        document.getElementById('title').className = '';
-        document.getElementById('container').className = '';
-        document.getElementById('info').className = '';
-        document.getElementById('enter').className = '';
-        document.getElementById('video-container').className = 'hide';
-        document.getElementById('video').className = '';
-        document.getElementById('footer').className = 'hide';
-        document.getElementById('title-link').className = 'hide';
-    } else {
-        document.getElementById('bar').className = 'hide';
-        document.getElementById('title').className = 'animate';
-        document.getElementById('container').className = 'animate';
-        document.getElementById('info').className = 'hide';
-        document.getElementById('enter').className = 'animate';
-        document.getElementById('video-container').className = 'animate';
-        document.getElementById('video').className = 'animate';
-        document.getElementById('footer').className = 'animate';
-        setTimeout(function() {
-            document.getElementById('title').className = 'hide';
-            document.getElementById('enter').className = 'hide';
-            document.getElementById('title-link').className = 'show';
-        }, 1000)
-    }
-    animated = !animated;
+function scrollDown() {
+    var offsetTop = document.getElementById('video-block').offsetTop;
+    window.scroll({
+        top: offsetTop, 
+        left: 0, 
+        behavior: 'smooth'
+    });
 }
+
+function resizeLogo() {
+    var imgHeight = document.getElementById('title').clientHeight;
+    var height = document.getElementById('container').clientHeight * 0.5 + imgHeight + 25;
+    var dY = 'translateY(-' + height + 'px)';
+    document.getElementById('title').style.transform = dY;
+}
+
+var scene = new ScrollMagic.Scene({triggerElement: '', duration: 800})
+scene.setTween('#title', { top: '110%',  transform: 'translateY(0)', 'max-width': '250px' });
+scene.addTo(ctrl);
+
+resizeLogo();
+window.addEventListener('resize', function() {
+    resizeLogo();
+});
