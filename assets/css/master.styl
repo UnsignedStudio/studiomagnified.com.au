@@ -1,0 +1,163 @@
+@font-face
+  font-family: CircularStd-Book
+  src: url(../fonts/CircularStd-Book.otf)
+
+@font-face
+  font-family: CircularStd-Medium
+  src: url(../fonts/CircularStd-Medium.otf)
+
+body
+  background-color: #547088
+  margin: 0
+  overflow: hidden
+
+#container
+  position: absolute
+  left: 0
+  right: 0
+  top: 50%
+  transform: translateY(-50%)
+
+@keyframes container
+  from 
+    top: 50%
+    transform: translateY(-50%)
+  to
+    top: 5%
+    transform: translateY(0%)
+
+#container.animate
+  animation-name: container
+  animation-duration: 1s
+  animation-fill-mode: forwards 
+
+.content
+  margin: auto
+  max-width: 660px;
+
+h1,
+a#title-link
+  color: #f7f381
+  font-size: 40pt;
+  margin-top: 20px
+  margin-bottom: 15px
+  font-weight: normal
+
+#bar
+  background-color: #f7f381
+  display: block
+  height: 4px
+  margin: auto
+  margin-bottom: 30px
+  width: 400px
+
+
+@keyframes title
+  from 
+    font-size: 40pt
+  to
+    font-size: 20pt
+
+#title.animate
+  animation-name: title
+  animation-duration: 1s
+  animation-fill-mode: forwards
+
+p
+  color: white
+
+a
+  color: white
+
+h1, p, a#title-link
+  font-family: 'CircularStd-Book', sans-serif
+  text-align: center
+
+#enter
+  position: absolute
+  left: 0
+  right: 0
+  bottom: 80px
+
+#enter img 
+  display: block
+  margin: auto
+
+@keyframes enter
+  from 
+    bottom: 80px
+  to
+    bottom: -50px
+
+#enter.animate
+  animation-name: enter
+  animation-duration: 1s
+  animation-fill-mode: forwards
+
+#bar.hide,
+.hide
+  display: none
+
+#video-container
+  position: absolute
+  left: 20px
+  right: 20px
+  top: 50%
+  transform: translateY(-50%)
+
+video 
+  display: block
+  margin: auto
+  width: 100%
+  max-width: 900px
+
+@keyframes video
+  from 
+    opacity: 0
+  to
+    opacity: 100
+
+#video.animate
+  animation-name: video
+  animation-duration: 1s
+  animation-delay: 0.5s
+  animation-fill-mode: both
+
+#footer
+  position: absolute
+  left: 0
+  right: 0
+  bottom: -40px
+
+@keyframes footer
+  from
+    bottom: -40px
+  to
+    bottom: 40px
+
+#footer.animate
+  animation-name: footer
+  animation-duration: 1s
+  animation-delay: 0.5s
+  animation-fill-mode: forwards
+
+.social
+  margin: auto
+  width: 145px
+
+.social a 
+  margin-right: 35px
+
+.social a:last-child
+  margin-right: 0
+
+a#title-link
+  font-size: 20pt
+  display: none
+  text-decoration: none
+
+a#title-link:hover
+  color: #fcf5b6
+
+#title-link.show
+  display: block
