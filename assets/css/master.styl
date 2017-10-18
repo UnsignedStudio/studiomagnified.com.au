@@ -15,6 +15,7 @@ body
 
 .block
   height: 100vh
+  min-height: 100%
   position: relative
 
 #container
@@ -30,21 +31,15 @@ body
   max-width: 660px;
 
 #title
+  position: absolute
+  left: 15px
+  right: 15px
+  top: 50%
+
+#title img 
   max-width: 600px
   display: block
   margin: auto
-  position: absolute
-  left: 0
-  right:0
-  top: 50%
-
-h1,
-a#title-link
-  color: #f7f381
-  font-size: 40pt;
-  margin-top: 20px
-  margin-bottom: 15px
-  font-weight: normal
 
 #bar
   background-color: #f7f381
@@ -67,6 +62,7 @@ p
   left: 0
   right: 0
   bottom: 80px
+  text-align: center
 
 #enter img
   transition: transform 0.2s
@@ -107,17 +103,7 @@ video
 .social a:last-child
   margin-right: 0
 
-a#title-link
-  font-size: 20pt
-  display: none
-  text-decoration: none
-
-a#title-link:hover
-  color: #fcf5b6
-
-#title-link.show
-  display: block
-
+/*
 @media screen and (max-width: 618px) {
   #title {
     margin: 0
@@ -125,3 +111,4 @@ a#title-link:hover
     width: calc(100% - 30px)
   }
 }
+*/
